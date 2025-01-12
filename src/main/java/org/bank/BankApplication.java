@@ -22,8 +22,6 @@ public class BankApplication {
   private final UserService userService;
   private final AccountService accountService;
   private final TransactionService transactionService;
-  private final CardService cardService;
-  private final BranchService branchService;
   private final AccountTypeService accountTypeService;
 
   public static void main(String[] args) {

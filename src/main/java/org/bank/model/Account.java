@@ -37,10 +37,6 @@ public class Account extends BaseEntity {
   @JoinColumn(name = "account_type_id", nullable = false)
   private AccountType accountType;
 
-  @ManyToOne
-  @JoinColumn(name = "branch_id")
-  private Branch branch;
-
   @OneToMany(mappedBy = "sourceAccount")
   @Builder.Default
   private Set<Transaction> outgoingTransactions = new HashSet<>();
@@ -48,7 +44,4 @@ public class Account extends BaseEntity {
   @OneToMany(mappedBy = "targetAccount")
   @Builder.Default
   private Set<Transaction> incomingTransactions = new HashSet<>();
-
-  @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
-  private Card card;
 }
